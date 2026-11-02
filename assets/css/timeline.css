@@ -1,0 +1,177 @@
+/*
+ * SPDX-License-Identifier: AGPL-3.0-only
+ * Original project author: Kaspars Mednis (madKaspars)
+ * AI-generated implementation; see NOTICE.md for provenance.
+ */
+/* Module-scoped styles; native text, buttons and state colors remain theme-owned. */
+.list-table.cep-window-list > tbody > tr > td.cep-window-open-cell { padding: 0 3px; }
+.cep-window-list a.cep-window-open { display: inline-flex; align-items: center; box-sizing: border-box; min-height: 34px; padding: 7px 8px; white-space: nowrap; }
+.list-table.cep-window-list > tbody > tr.cep-window-row:is(:hover, :focus-within) { background-color: rgba(41, 128, 185, .055); }
+.list-table.cep-window-list > tbody > tr.cep-window-row:is(:hover, :focus-within) > td { background-color: transparent; }
+@media (pointer: coarse) {
+    .cep-window-list a.cep-window-open { min-height: 44px; }
+}
+
+.cep-timeline { --cep-line: #2456b4; --cep-grid: rgba(128, 140, 151, .24); }
+.cep-timeline[hidden], #cep-member-table[hidden], .cep-tl-details[hidden] { display: none !important; }
+#cep-member-tabs { position: relative; margin-top: 10px; }
+#cep-member-tabs > .ui-tabs-nav { padding-right: 118px; min-height: 40px; }
+.cep-member-refresh { display: flex; justify-content: flex-end; padding: 6px 10px; }
+.ui-tabs > .cep-member-refresh { position: absolute; top: 0; right: 0; }
+.cep-member-refresh[hidden], .cep-refresh-feedback[hidden] { display: none !important; }
+.cep-refresh-feedback { margin: 8px 10px; }
+.cep-refresh-feedback.cep-refresh-success { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+#cep-member-tabs > .ui-tabs-nav a:focus-visible { outline: 2px solid currentColor; outline-offset: -3px; }
+#cep-member-tabs > .ui-tabs-panel { padding: 0; }
+.cep-relationship-summary { margin-top: 12px; }
+.cep-cause-group { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; padding: 3px 0; }
+.cep-cause-group + .cep-cause-group { margin-top: 8px; }
+.cep-cause-name { font-weight: 600; min-width: 0; }
+.cep-cause-count { border-left: 1px solid rgba(128, 140, 151, .3); padding-left: 16px; margin-left: 8px; }
+.cep-shared-expiry { font-size: 11px; margin-top: 8px; }
+.cep-role-summary { font-size: 11px; margin: 12px 10px; }
+.cep-role { display: inline-block; font-size: 11px; line-height: 20px; white-space: nowrap; padding: 0 9px; border: 1px solid rgba(128, 140, 151, .35); border-radius: 2px; background: rgba(128, 140, 151, .07); }
+.cep-role-cause { font-weight: 600; border-color: rgba(41, 128, 185, .4); background: rgba(41, 128, 185, .09); }
+.cep-role-unknown { border-style: dashed; }
+.cep-causal-table th { white-space: nowrap; }
+.cep-causal-table td { padding-top: 10px; padding-bottom: 10px; }
+.cep-causal-table td:first-child { width: 100px; }
+.cep-member-name { position: relative; }
+.cep-name-cause > span { font-weight: 600; }
+.cep-member-relation { margin-top: 5px; font-size: 11px; }
+.cep-name-symptom { padding-left: 24px; }
+.cep-name-symptom::before { content: ''; position: absolute; left: 5px; top: -8px; width: 10px; height: 18px; border-left: 1px solid rgba(128, 140, 151, .65); border-bottom: 1px solid rgba(128, 140, 151, .65); }
+.cep-tl-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 12px 10px 6px; }
+.cep-tl-axis-label { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.cep-tl-range { padding: 2px 10px 10px; font-size: 11px; }
+.cep-tl-main { display: flex; align-items: flex-start; min-width: 0; }
+.cep-tl-chart { flex: 1; min-width: 0; }
+.cep-tl-scroll { max-height: 620px; overflow: auto; overscroll-behavior: contain; }
+.cep-tl-row { display: grid; grid-template-columns: minmax(200px, 28%) minmax(300px, 1fr) 160px; min-width: 700px; border-bottom: 1px solid var(--cep-grid); align-items: stretch; }
+.cep-tl-causal .cep-tl-row { grid-template-columns: 110px minmax(220px, 22%) minmax(300px, 1fr) 160px; min-width: 850px; }
+.cep-tl-role-cell { padding: 10px; display: flex; align-items: center; }
+.cep-tl-relationship { margin-top: 5px; font-size: 11px; }
+.cep-timeline .cep-tl-cause .cep-tl-event-name { font-weight: 600; }
+.cep-tl-symptom .cep-tl-event { padding-left: 34px; position: relative; }
+.cep-tl-symptom .cep-tl-event::before { content: ''; position: absolute; left: 15px; top: 4px; width: 10px; height: 18px; border-left: 1px solid rgba(128, 140, 151, .65); border-bottom: 1px solid rgba(128, 140, 151, .65); }
+.cep-tl-heading { font-weight: bold; border-top: 1px solid var(--cep-grid); }
+.cep-tl-heading .cep-tl-event, .cep-tl-heading .cep-tl-remaining { align-content: center; }
+.cep-tl-event { padding: 10px 12px; min-width: 0; }
+.cep-timeline .cep-tl-event-name { all: unset; color: inherit; font: inherit; font-weight: 500; cursor: pointer; overflow-wrap: anywhere; background: transparent; box-shadow: none; }
+.cep-tl-event-name:hover { text-decoration: underline; }
+.cep-tl-event-name:focus-visible, .cep-tl-plot:focus-visible, .cep-tl-scroll:focus-visible { outline: 2px solid var(--cep-line); outline-offset: -2px; }
+.cep-tl-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin-top: 5px; font-size: 11px; }
+.cep-tl-axis { position: relative; height: 62px; min-width: 0; border-left: 1px solid var(--cep-grid); border-right: 1px solid var(--cep-grid); }
+.cep-tl-tick { position: absolute; top: 33px; white-space: nowrap; transform: translateX(-50%); font-size: 11px; font-weight: normal; }
+.cep-tl-tick-first { transform: none; }
+.cep-tl-tick-last { transform: translateX(-100%); }
+.cep-tl-snapshot-label, .cep-tl-window-expiry-label { position: absolute; top: 8px; transform: translateX(-50%); font-size: 11px; white-space: nowrap; max-width: calc(100% - 8px); overflow: hidden; text-overflow: ellipsis; }
+.cep-tl-axis.cep-tl-stacked-markers { height: 80px; }
+.cep-tl-stacked-markers .cep-tl-window-expiry-label { top: 26px; }
+.cep-tl-stacked-markers .cep-tl-tick { top: 51px; }
+.cep-tl-plot { all: unset; display: flex; align-items: center; position: relative; min-width: 0; color: inherit; cursor: pointer; border-left: 1px solid var(--cep-grid); border-right: 1px solid var(--cep-grid); }
+/* Plot buttons must not inherit the native solid-blue button hover/focus treatment. */
+.cep-timeline .cep-tl-plot,
+.cep-timeline .cep-tl-plot:is(:hover, :focus, :active) { background: transparent; color: inherit; border-color: var(--cep-grid); box-shadow: none; }
+.cep-timeline .cep-tl-plot:focus-visible { outline: 2px solid var(--cep-line); outline-offset: -2px; }
+.cep-tl-plot svg { display: block; width: 100%; height: 100%; min-height: 80px; overflow: hidden; }
+.cep-tl-plot-message { position: absolute; left: 8px; right: 8px; bottom: 2px; font-size: 10px; line-height: 1.2; text-align: left; }
+.cep-tl-recovery-label { position: absolute; top: 8px; max-width: min(220px, calc(100% - 8px)); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; line-height: 16px; text-align: left; }
+.cep-tl-remaining { padding: 10px; align-content: center; font-size: 11px; overflow-wrap: anywhere; }
+.cep-tl-grid { fill: none; stroke: var(--cep-grid); stroke-width: 1; }
+.cep-tl-future { fill: #2980b9; fill-opacity: .045; }
+.cep-tl-elapsed { fill: var(--cep-line); background: var(--cep-line); fill-opacity: 1; }
+.cep-tl-estimate { fill: var(--cep-line); fill-opacity: .10; stroke: var(--cep-line); stroke-width: 1; stroke-dasharray: 4 3; }
+.cep-tl-recovered { fill: currentColor; background: currentColor; }
+.cep-tl-recovered-estimate { fill: currentColor; fill-opacity: .10; stroke: currentColor; stroke-width: 1; stroke-dasharray: 4 3; }
+.cep-tl-recovery-line { stroke: currentColor; stroke-width: 1.5; }
+.cep-tl-recovery-divider { stroke: #fff; stroke-width: 1.5; }
+.cep-tl-recovery-marker { fill: #fff; stroke: rgba(0, 0, 0, .25); stroke-width: .75; }
+.cep-tl-snapshot, .cep-tl-window-expiry { stroke: currentColor; stroke-width: 1; stroke-dasharray: 4 3; opacity: .8; }
+.cep-tl-period { stroke: currentColor; stroke-width: 1; stroke-dasharray: 1 3; opacity: .5; }
+.cep-tl-end { stroke: var(--cep-line); stroke-width: 1.5; }
+.cep-tl-point { fill: var(--cep-line); }
+.cep-tl-end.cep-tl-recovery-line { stroke: currentColor; }
+.cep-tl-point.cep-tl-recovered { fill: currentColor; }
+.cep-tl-row[data-event-id]:is(:hover, :focus-within, .cep-tl-selected) { background-color: rgba(41, 128, 185, .055); }
+.cep-tl-details { width: 270px; flex: 0 0 270px; padding: 14px; border-left: 1px solid var(--cep-grid); overflow-wrap: anywhere; box-sizing: border-box; }
+.cep-tl-details-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; justify-content: space-between; }
+.cep-tl-detail-name { font-weight: bold; margin: 16px 0; }
+.cep-tl-details dl { margin: 0 0 16px; }
+.cep-tl-details dt { font-size: 11px; margin-top: 12px; opacity: .75; }
+.cep-tl-details dd { margin: 3px 0 0; }
+.cep-tl-legend { display: flex; flex-wrap: wrap; gap: 10px 24px; padding: 12px 10px 6px; font-size: 11px; }
+.cep-tl-legend > span { display: inline-flex; align-items: center; gap: 7px; }
+.cep-tl-swatch { display: inline-block; width: 28px; height: 10px; box-sizing: border-box; }
+.cep-tl-swatch.cep-tl-estimate { border: 1px dashed var(--cep-line); background: rgba(41, 128, 185, .10); }
+.cep-tl-swatch.cep-tl-recovery-point { position: relative; background: currentColor; }
+.cep-tl-swatch.cep-tl-recovery-point::after { content: ''; position: absolute; width: 6px; height: 6px; left: 50%; top: 50%; background: #fff; transform: translate(-50%, -50%) rotate(45deg); }
+.cep-tl-note, .cep-tl-count { padding: 0 10px; margin: 6px 0; font-size: 11px; }
+.cep-tl-count { padding-bottom: 6px; }
+.cep-tl-empty { padding: 30px 12px; text-align: center; }
+@media (max-width: 1050px) {
+    .cep-tl-main { flex-direction: column; }
+    .cep-tl-chart { width: 100%; }
+    .cep-tl-details { width: 100%; flex-basis: auto; border-left: none; border-top: 1px solid var(--cep-grid); }
+    .cep-tl-details dl { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 8px; }
+    .cep-tl-details dt, .cep-tl-details dd { margin: 0; }
+}
+@media (forced-colors: active) {
+    .cep-timeline { --cep-line: Highlight; --cep-grid: GrayText; }
+    .cep-tl-elapsed { fill: Highlight; }
+    .cep-tl-recovery-marker { fill: Canvas; stroke: CanvasText; }
+    .cep-tl-recovery-divider { stroke: Canvas; }
+    .cep-tl-snapshot, .cep-tl-window-expiry { stroke: CanvasText; }
+}
+
+/* History uses the native hintbox surface, close control, focus and overlay stack. */
+.cep-change-count { display: inline-flex; gap: 5px; align-items: center; min-height: 32px; white-space: nowrap; }
+.cep-change-count > [class^="zi-"] { font-size: 18px; }
+/* Keep Timeline history beside the event metadata without a separate tall button row. */
+.cep-tl-update-summary { display: inline-flex; align-items: center; }
+.cep-tl-update-summary .cep-change-count { min-height: 20px; font-size: inherit; line-height: 16px; }
+.cep-tl-update-summary .cep-change-count > [class^="zi-"] { display: inline-flex; font-size: 14px; line-height: 16px; }
+.cep-tl-update-summary .cep-change-count > [class^="zi-"]::before { font-size: 14px; line-height: 16px; }
+.cep-change-caption { margin: 8px 10px; font-size: 11px; line-height: 1.5; }
+.cep-change-hint { box-sizing: border-box; width: 730px; max-width: calc(100vw - 48px); max-height: min(620px, calc(100vh - 100px)); overflow: auto; padding: 8px; }
+.cep-change-event { margin: 8px 0; overflow-wrap: anywhere; }
+.cep-change-total { margin: 12px 0 4px; font-weight: 600; }
+.cep-change-update-number { margin-top: 3px; font-size: 11px; }
+.cep-change-hint .cep-change-caption { margin: 8px 0; }
+.cep-change-table { table-layout: fixed; width: 100%; }
+.cep-change-table th:first-child { width: 145px; }
+.cep-change-table th:nth-child(2) { width: 170px; }
+.cep-change-table td { vertical-align: top; overflow-wrap: anywhere; }
+.cep-change-operation, .cep-change-rule { display: flex; gap: 6px; align-items: baseline; }
+.cep-change-operation + .cep-change-operation { margin-top: 6px; }
+.cep-change-operation > [class^="zi-"], .cep-change-rule > [class^="zi-"] { flex: 0 0 18px; text-align: center; }
+.cep-change-selected { background: rgba(41, 128, 185, .09); }
+.cep-change-pagination { display: flex; gap: 8px; margin-top: 12px; }
+.cep-change-limit { font-size: 10px; margin: 3px 0; }
+.cep-tl-plot-cell { position: relative; min-width: 0; display: flex; }
+.cep-tl-plot-cell > .cep-tl-plot { width: 100%; box-sizing: border-box; }
+.cep-tl-change-markers { position: absolute; inset: 0; pointer-events: none; }
+/* The SVG bar center is y=46 in an 80-unit viewBox. The marker follows the same stretched row geometry. */
+.cep-timeline .cep-change-marker { position: absolute; top: 57.5%; transform: translate(-50%, -50%); min-width: 32px; height: 32px; padding: 0; display: inline-flex; gap: 1px; align-items: center; justify-content: center; pointer-events: auto; color: #fff; background: transparent; border: 1px solid transparent; box-shadow: none; }
+.cep-timeline .cep-change-marker > [class^="zi-"] { display: inline-flex; font-size: 14px; line-height: 14px; }
+.cep-timeline .cep-change-marker > [class^="zi-"]::before { font-size: 14px; line-height: 14px; }
+.cep-timeline .cep-change-marker.cep-change-marker-estimated { color: inherit; }
+.cep-timeline .cep-change-marker:is(:hover, :focus-visible) { border-color: currentColor; background: rgba(128, 140, 151, .08); }
+.cep-marker-count { font-size: 10px; line-height: 14px; }
+.cep-tl-change-markers { left: 1px; right: 1px; }
+.cep-tl-updates-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 28px; margin-left: 12px; }
+.cep-tl-updates-toggle > span { white-space: nowrap; }
+.cep-tl-hide-updates :is(.cep-tl-update-summary, .cep-tl-change-markers, .cep-tl-update-legend) { display: none !important; }
+@media (pointer: coarse) {
+    .cep-change-count, .cep-tl-update-summary .cep-change-count { min-height: 44px; }
+    .cep-timeline .cep-change-marker { min-width: 44px; height: 44px; }
+    .cep-tl-updates-toggle .radio-list-control label { min-height: 44px; display: inline-flex; align-items: center; }
+}
+@media (forced-colors: active) {
+    .cep-timeline .cep-change-marker { color: HighlightText; forced-color-adjust: none; }
+    .cep-timeline .cep-change-marker.cep-change-marker-estimated { color: CanvasText; }
+}
+@media (max-width: 600px) {
+    .cep-change-table th:first-child { width: 105px; }
+    .cep-change-table th:nth-child(2) { width: 100px; }
+}

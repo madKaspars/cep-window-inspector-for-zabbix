@@ -1,0 +1,12 @@
+FOR EDUCATIONAL PURPOSES ONLY
+
+CEP Window Inspector is an experimental, AI-generated community module for
+learning, labs and demonstrations. It is not recommended for production,
+business-critical or safety-critical monitoring.
+
+Original project author: Kaspars Mednis (madKaspars)
+Tested with Zabbix 8.0.0rc3; see VALIDATION.md for scope.
+No independent security audit or production certification is claimed.
+
+Read LICENSE, NOTICE.md and DISCLAIMER.md before use. These suitability
+statements do not add restrictions to the GNU AGPL v3 licence.

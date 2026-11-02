@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "id": "cep-window-inspector",
+  "name": "CEP Window Inspector",
+  "namespace": "CepWindowInspector",
+  "version": "1.5.7",
+  "author": "Kaspars Mednis (madKaspars)",
+  "description": "Read-only saved CEP windows, member events and adaptive timelines. Super admins only.",
+  "assets": {
+    "js": [
+      "changes.js",
+      "timeline.js"
+    ],
+    "css": [
+      "timeline.css"
+    ]
+  },
+  "actions": {
+    "cep.window.inspect": {
+      "class": "Inspect",
+      "view": "cep.window.inspect"
+    },
+    "cep.window.changes": {
+      "class": "Changes",
+      "layout": "layout.json"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible problem using synthetic data.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is educational, experimental software with voluntary support.
+        Do not include credentials or real monitoring data. For vulnerabilities, follow SECURITY.md.
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Zabbix server and frontend, module, PHP, and database engine/version.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Use a minimal lab example with synthetic events and rules.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted screenshots or errors
+      description: Include browser and theme when reporting a display issue. Remove private details.

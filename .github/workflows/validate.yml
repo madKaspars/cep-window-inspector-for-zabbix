@@ -1,0 +1,47 @@
+name: Validate
+"on":
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Check out Zabbix 8.0.0rc3
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: zabbix/zabbix
+          ref: 090f06dc325f1629c5cdc2bb3354a184e15e55d4 # 8.0.0rc3
+          path: .cache/zabbix
+          persist-credentials: false
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
+        with:
+          php-version: '8.4'
+          extensions: pdo_sqlite, sqlite3
+          coverage: none
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - name: PHP syntax and regression checks
+        run: |
+          php -r 'require ".cache/zabbix/ui/include/defines.inc.php"; if (ZABBIX_VERSION !== "8.0.0rc3") { exit(1); } echo "Testing Zabbix ".ZABBIX_VERSION.PHP_EOL;'
+          find Module.php actions includes views tests -name '*.php' -print0 | xargs -0 -n1 php -l
+          php tests/changes.php .cache/zabbix/ui
+          php tests/module.php .cache/zabbix/ui
+      - name: JavaScript checks
+        run: |
+          node --check assets/js/timeline.js
+          node --check assets/js/changes.js
+          node tests/timeline.cjs
+          node tests/changes.cjs
+      - name: Build and verify deterministic complete-source package
+        run: |
+          python3 scripts/package_release.py
+          cp dist/SHA256SUMS "$RUNNER_TEMP/cep-first-checksums"
+          python3 scripts/package_release.py
+          cmp dist/SHA256SUMS "$RUNNER_TEMP/cep-first-checksums"
