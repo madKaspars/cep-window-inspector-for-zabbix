@@ -13,6 +13,6 @@ Read-only CEP window inspection for Zabbix **8.0.0**, intended for education, la
 - Optional in-bar CEP symbols controlled by **On / Off**, defaulting to Off.
 - In-place Refresh that preserves the active tab and timeline controls.
 - Super-admin-only access, read-only queries and bounded member/history pages.
-- Complete source, RC3 validation, realistic light-theme previews and reproducible release packaging.
+- Complete source, frontend validation, realistic light-theme previews and reproducible release packaging.
 
 Original project author: **Kaspars Mednis (madKaspars)**. Distributed under **GNU AGPL v3 only**. See [NOTICE.md](NOTICE.md) for attribution and AI-generation disclosure, and [VALIDATION.md](VALIDATION.md) for testing scope.

@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: zabbix/zabbix
-          ref: c81e276e505924eaa115d0aa4bb81c388233f924 # 8.0.0rc3
+          ref: c81e276e505924eaa115d0aa4bb81c388233f924 # 8.0.0
           path: .cache/zabbix
           persist-credentials: false
       - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
@@ -29,7 +29,7 @@ jobs:
           node-version: '22'
       - name: PHP syntax and regression checks
         run: |
-          php -r 'require ".cache/zabbix/ui/include/defines.inc.php"; if (ZABBIX_VERSION !== "8.0.0rc3") { exit(1); } echo "Testing Zabbix ".ZABBIX_VERSION.PHP_EOL;'
+          php -r 'require ".cache/zabbix/ui/include/defines.inc.php"; if (ZABBIX_VERSION !== "8.0.0") { exit(1); } echo "Testing Zabbix ".ZABBIX_VERSION.PHP_EOL;'
           find Module.php actions includes views tests -name '*.php' -print0 | xargs -0 -n1 php -l
           php tests/changes.php .cache/zabbix/ui
           php tests/module.php .cache/zabbix/ui
