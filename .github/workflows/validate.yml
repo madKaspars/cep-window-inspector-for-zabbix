@@ -12,11 +12,11 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           persist-credentials: false
-      - name: Check out Zabbix 8.0.0rc3
+      - name: Check out Zabbix 8.0.0
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           repository: zabbix/zabbix
-          ref: 090f06dc325f1629c5cdc2bb3354a184e15e55d4 # 8.0.0rc3
+          ref: c81e276e505924eaa115d0aa4bb81c388233f924 # 8.0.0rc3
           path: .cache/zabbix
           persist-credentials: false
       - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2
