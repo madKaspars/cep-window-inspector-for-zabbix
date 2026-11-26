@@ -2,7 +2,7 @@
 
 ## 1.5.7 — Initial public preview
 
-Read-only CEP window inspection for Zabbix **8.0.0rc3**, intended for education, labs and demonstrations.
+Read-only CEP window inspection for Zabbix **8.0.0**, intended for education, labs and demonstrations.
 
 - Saved-window overview with rule filters, descriptive window links and expiry estimates.
 - Native **Table** and **Timeline** tabs, with Table as the default.
