@@ -22,7 +22,7 @@ The repository is public. The versioned release is published explicitly after re
 ## Publish a release
 
 1. Review the README, original-author credit, AI-generation disclosure and educational-use notices.
-2. Run the checks in [CONTRIBUTING.md](../CONTRIBUTING.md). The checks must use the pinned official Zabbix 8.0.0rc3 source.
+2. Run the checks in [CONTRIBUTING.md](../CONTRIBUTING.md). The checks must use the pinned official Zabbix 8.0.0 source.
 3. Build with `python3 scripts/package_release.py`. Check the archive and `dist/SHA256SUMS`.
 4. Review the files to be committed. Exclude local caches, credentials, monitoring data and `dist/`. The screenshot fixtures are synthetic.
 5. Push the reviewed source changes to the project repository.
@@ -31,7 +31,7 @@ The repository is public. The versioned release is published explicitly after re
 
 ## Workflows
 
-`validate.yml` runs on pushes, pull requests or manual invocation. It lints PHP, runs PHP/JavaScript regression checks with the pinned official Zabbix 8.0.0rc3 checkout, and verifies deterministic packaging. It has read-only repository permissions and no publication step.
+`validate.yml` runs on pushes, pull requests or manual invocation. It lints PHP, runs PHP/JavaScript regression checks with the pinned official Zabbix 8.0.0 checkout, and verifies deterministic packaging. It has read-only repository permissions and no publication step.
 
 `release.yml` runs only after a GitHub release is explicitly **published**. It checks that the release tag matches `manifest.json`, rebuilds the archive and uploads it with `SHA256SUMS`. Only that job has permission to write release assets; it does not create releases. If Actions is unavailable, build locally and attach those two files manually to the reviewed release.
 

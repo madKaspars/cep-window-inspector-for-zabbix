@@ -1,13 +1,13 @@
 # Validation — Zabbix 8.0.0
 
-Validated on **2026-11-21**, module version **1.5.7**.
+Module version **1.5.7**. See the linked Validate workflow for dated automated test results.
 
 ## Zabbix source
 
 - Official release tag: [8.0.0](https://github.com/zabbix/zabbix/tree/8.0.0).
-- Pinned commit: `090f06dc325f1629c5cdc2bb3354a184e15e55d4`.
+- Pinned commit: `c81e276e505924eaa115d0aa4bb81c388233f924`.
 - The checkout's `ui/include/defines.inc.php` identifies **8.0.0**. CI checks this version explicitly before running tests.
-- Kaspars Mednis has also tested the module on an Zabbix 8.0.0 installation.
+- Kaspars Mednis has also tested the module on a Zabbix 8.0.0 installation.
 
 ## Automated validation
 

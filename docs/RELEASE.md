@@ -6,7 +6,7 @@ Version **1.5.7** of a read-only Zabbix frontend module for exploring saved CEP 
 
 Original project author: **Kaspars Mednis (madKaspars)**. Implementation generated with ChatGPT and OpenAI Codex under the author's direction. No independent security audit or production certification is claimed.
 
-Tested with **Zabbix 8.0.0rc3**, including automated checks against the official RC3 source and maintainer testing on an RC3 installation. Other builds require compatibility testing.
+Tested with **Zabbix 8.0.0**, including automated checks against the official 8.0.0 source and maintainer testing on a Zabbix 8.0.0 installation. Other builds require compatibility testing.
 
 Features include default Table and optional Timeline tabs, recovery markers, estimated window expiry, cause/symptom roles, rule-filtered CEP update popups, optional in-bar update symbols and an in-place Refresh that retains view settings. History popups open only on click or keyboard activation.
 
