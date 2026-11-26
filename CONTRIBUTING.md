@@ -10,7 +10,7 @@ From the repository root:
 
 ```sh
 git clone https://github.com/zabbix/zabbix.git .cache/zabbix
-git -C .cache/zabbix checkout 090f06dc325f1629c5cdc2bb3354a184e15e55d4
+git -C .cache/zabbix checkout c81e276e505924eaa115d0aa4bb81c388233f924
 find Module.php actions includes views tests -name '*.php' -exec php -l '{}' \;
 php tests/changes.php .cache/zabbix/ui
 php tests/module.php .cache/zabbix/ui
