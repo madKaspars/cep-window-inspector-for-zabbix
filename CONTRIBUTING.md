@@ -4,7 +4,7 @@ Use synthetic data and an isolated lab. Include the exact Zabbix server/frontend
 
 ## Local checks
 
-Requirements: PHP 8.4 CLI with PDO SQLite, Node.js 20 or later, Python 3.10 or later, and the official Zabbix 8.0.0rc3 frontend source. These are development tools; users install the module into their existing Zabbix frontend without installing Node or Python there.
+Requirements: PHP 8.4 CLI with PDO SQLite, Node.js 20 or later, Python 3.10 or later, and the official Zabbix 8.0.0 frontend source. These are development tools; users install the module into their existing Zabbix frontend without installing Node or Python there.
 
 From the repository root:
 
@@ -21,7 +21,7 @@ node tests/changes.cjs
 python3 scripts/package_release.py
 ```
 
-`tests/changes.php` includes the core PHP regression suite. `tests/module.php` installs a temporary copy under `modules/cep-window-inspector` and verifies the manifest, namespace and controllers using RC3's native module loader. The fixtures use SQLite adapters and actual Zabbix HTML/helper classes from the pinned checkout, not a running Zabbix database. See [VALIDATION.md](VALIDATION.md) for the scope and limits.
+`tests/changes.php` includes the core PHP regression suite. `tests/module.php` installs a temporary copy under `modules/cep-window-inspector` and verifies the manifest, namespace and controllers using Zabbix's native module loader. The fixtures use SQLite adapters and actual Zabbix HTML/helper classes from the pinned checkout, not a running Zabbix database. See [VALIDATION.md](VALIDATION.md) for the scope and limits.
 
 Changes to interactive behaviour also need browser checks on a compatible lab installation. Check Table as default, timeline scaling, recovery/expiry distinction, cause/symptom roles, rule-specific history, click-only popups, keyboard access, light/dark themes and in-place refresh with retained controls. Do not claim production database or browser coverage from unit tests alone.
 
