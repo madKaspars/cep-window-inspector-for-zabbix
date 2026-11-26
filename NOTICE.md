@@ -25,8 +25,8 @@ The educational-purpose notice describes intended use and suitability. It does n
 ## Zabbix and external material
 
 - The module depends on the installed Zabbix frontend, its native HTML classes, theme styles, icons and database connection. It does not bundle a complete Zabbix frontend, icon-font binaries or external chart libraries.
-- Automated validation uses the official **Zabbix 8.0.0rc3** release, commit `090f06dc325f1629c5cdc2bb3354a184e15e55d4`, from <https://github.com/zabbix/zabbix>. That source carries its own Zabbix SIA notices and AGPL licence. The test checkout is an external dependency, not part of this archive.
-- Kaspars Mednis has also tested the module on an RC3 installation.
+- Automated validation uses the official **Zabbix 8.0.0** release, commit `090f06dc325f1629c5cdc2bb3354a184e15e55d4`, from <https://github.com/zabbix/zabbix>. That source carries its own Zabbix SIA notices and AGPL licence. The test checkout is an external dependency, not part of this archive.
+- Kaspars Mednis has also tested the module on an Zabbix 8.0.0 installation.
 - Screenshots in `docs/images/` show native Zabbix interface components and module output using synthetic local fixtures. They are illustrations, not monitoring records. Zabbix components retain their original authorship and notices.
 - Packaging and licence conventions were adapted from [madKaspars/halloween-theme-for-zabbix](https://github.com/madKaspars/halloween-theme-for-zabbix). The AGPL licence text is identical to that repository's licence; theme-specific installers, fonts and artwork are not bundled here.
 
