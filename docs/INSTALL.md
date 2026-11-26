@@ -1,6 +1,6 @@
 # Installation and removal
 
-This module is for educational use in an isolated lab. Read the [README](../README.md), [compatibility requirements](BEHAVIOR.md) and [disclaimer](../DISCLAIMER.md) first. Validated with Zabbix **8.0.0rc3**.
+This module is for educational use in an isolated lab. Read the [README](../README.md), [compatibility requirements](BEHAVIOR.md) and [disclaimer](../DISCLAIMER.md) first. Validated with Zabbix **8.0.0**.
 
 ## Locate the frontend
 
