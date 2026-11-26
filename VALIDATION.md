@@ -24,4 +24,4 @@ The [Validate workflow](https://github.com/madKaspars/cep-window-inspector-for-z
 
 Screenshots use synthetic storage-monitoring data: five staggered event times with one-hour retention, two recoveries and recorded CEP updates. The table preview uses the light theme. The timeline illustration enables CEP updates; the module defaults to Off.
 
-Local SQLite and controller adapters are not a production MySQL/MariaDB/PostgreSQL load test or a complete live-session integration test. Production worker timing, independent security review and compatibility with other Zabbix versions are not claimed. Maintainer testing on RC3 is additional evidence.
+Local SQLite and controller adapters are not a production MySQL/MariaDB/PostgreSQL load test or a complete live-session integration test. Production worker timing, independent security review and compatibility with other Zabbix versions are not claimed. Maintainer testing on 8.0.0 is additional evidence.
