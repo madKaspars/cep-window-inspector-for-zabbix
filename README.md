@@ -10,7 +10,7 @@ A read-only frontend module for exploring saved Complex Event Processing (CEP) w
 
 **Original project author:** [Kaspars Mednis (madKaspars)](https://github.com/madKaspars)  
 **Module version:** 1.5.7  
-**Tested with:** Zabbix **8.0.0rc3**<br>
+**Tested with:** Zabbix **8.0.0**<br>
 **Licence:** [GNU AGPL v3 only](LICENSE) (`AGPL-3.0-only`)
 
 ## Features
@@ -42,7 +42,7 @@ These screenshots use a synthetic storage-monitoring scenario, not real monitori
 
 ## Compatibility
 
-Tested with **Zabbix 8.0.0rc3**. Automated checks use the official RC3 source and its native module loader, HTML classes and helpers. The maintainer has also tested the module on an RC3 installation. See [validation details](VALIDATION.md).
+Tested with **Zabbix 8.0.0**. Automated checks use the official 8.0.0 source and its native module loader, HTML classes and helpers. The maintainer has also tested the module on an Zabbix 8.0.0 installation. See [validation details](VALIDATION.md).
 
 Use a matching CEP-enabled server, database schema and frontend. The module requires CEP window tables and CEP update fields, native frontend helpers/icons, and SQL window functions. Older installations without these features are not compatible. Other releases require testing; this is not a claim of compatibility with every Zabbix 8 build.
 
